@@ -17,6 +17,12 @@ SeleniumとPythonを使い、Youtubeのコメント欄を監視しコメント�
 $ docker-compose up -d
 ```
 
+### 実行方法
+```bash
+$ docker exec python pip install -r requirements.txt
+$ docker exec python python test_selenium.py
+```
+
 ### 終了方法
 
 ```bash

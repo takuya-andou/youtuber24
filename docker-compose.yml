@@ -13,16 +13,3 @@ chrome:
     - 5900:5900
   volumes:
     - /dev/shm:/dev/shm
-
-python:
-  build: './python-selenium'
-  container_name: 'python'
-  links:
-    - selenium-hub:hub
-  command: 'tail -f /dev/null'
-  working_dir: '/root/script/'
-  volumes:
-    - ./src/:/root/script/
-  environment:
-    - 'TZ=Asia/Tokyo'
-    - apikey=TALK_APIKEY

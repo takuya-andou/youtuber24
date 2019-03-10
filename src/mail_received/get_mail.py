@@ -1,5 +1,6 @@
 import sqlite3
 import subprocess
+import pyperclip
 
 dbpath = 'mail.db'
 
@@ -14,8 +15,7 @@ row = cursor.fetchone()
 print(row['uidl'])
 print(row['subject'].replace(' by PR TIMES', ''))
 
-
-# subprocess.call('say ' + '"' + row['subject'] + '"', shell=True)
+pyperclip.copy(row['subject'])
 
 # update read flag
 cursor.execute("UPDATE mail SET read_flg = 1 where uidl = '" +
